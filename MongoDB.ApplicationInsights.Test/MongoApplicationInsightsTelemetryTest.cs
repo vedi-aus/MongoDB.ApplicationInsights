@@ -129,8 +129,10 @@ namespace MongoDB.ApplicationInsights.Test
                     _connectionId));
             // Complete the command and check no telemetry was recorded
             mocks.Telemetry.OnCommandSucceeded(
-                new CommandSucceededEvent("saslStart", new BsonDocument(), null, 
-                    1, _connectionId, TimeSpan.FromSeconds(1)));
+                new CommandSucceededEvent("saslStart", new BsonDocument(),
+                    new DatabaseNamespace("test"), null,
+                    1, 
+                    _connectionId, TimeSpan.FromSeconds(1)));
             mocks.TelemetryChannel.DidNotReceive().Send(Arg.Any<ITelemetry>());
         }
 
@@ -144,11 +146,12 @@ namespace MongoDB.ApplicationInsights.Test
                 _connectionId);
 
         private static CommandSucceededEvent CreateFindSucceededEvent(int requestId) =>
-            new CommandSucceededEvent("find", new BsonDocument(), null,
+            new CommandSucceededEvent("find", new BsonDocument(), null, null,
                     requestId, _connectionId, TimeSpan.FromSeconds(1));
 
         private static CommandFailedEvent CreateFindFailedEvent(int requestId) =>
-            new CommandFailedEvent("find", new Exception("oh dear"), null,
+            new CommandFailedEvent("find", new DatabaseNamespace("test"), 
+                new Exception("oh dear"), null,
                 requestId, _connectionId, TimeSpan.FromSeconds(1));
 
         [Test]

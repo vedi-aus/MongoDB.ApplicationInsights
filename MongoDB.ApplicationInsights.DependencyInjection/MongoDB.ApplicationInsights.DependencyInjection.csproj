@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Description>Adds application insights tracking into MongoDB with convenience functions for configuring the .NET core dependency injection system.</Description>
     <Copyright>(c) 2019 Mark Weaver</Copyright>
     <PackageLicenseFile>MIT_LICENSE.txt</PackageLicenseFile>

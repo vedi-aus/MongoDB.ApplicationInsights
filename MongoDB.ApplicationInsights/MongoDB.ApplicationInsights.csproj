@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Description>Adds application insights tracking into MongoDB in an easy to use way. There is also a second libary, MongoDB.ApplicationInsights.DependencyInjection which adds convenience functions for configuring the .NET core dependency injection system.</Description>
     <Copyright>(c) 2019 Mark Weaver</Copyright>
     <PackageLicenseFile>MIT_LICENSE.txt</PackageLicenseFile>
@@ -19,7 +19,7 @@
   <ItemGroup>
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.6.0" />
     <PackageReference Include="Microsoft.ApplicationInsights" Version="2.10.0" />
-    <PackageReference Include="MongoDB.Driver" Version="2.8.1" />
+    <PackageReference Include="MongoDB.Driver" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
